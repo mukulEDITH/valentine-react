@@ -17,41 +17,31 @@ function App() {
 
   const audioRef = useRef(null);
 
+// Start music on first click
+useEffect(() => {
+  const startMusic = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch(() => {});
+    }
+    document.removeEventListener("click", startMusic);
+  };
 
-   // ✅ Start music on first click anywhere
-  useEffect(() => {
-    const startMusic = () => {
-      if (audioRef.current) {
-        audioRef.current.play().catch(() => {});
-      }
-      document.removeEventListener("click", startMusic);
-    };
- 
-    document.addEventListener("click", startMusic);
+  document.addEventListener("click", startMusic);
 
-    return () => {
-      document.removeEventListener("click", startMusic);
-    };
-  }, []);
+  return () => {
+    document.removeEventListener("click", startMusic);
+  };
+}, []);
 
 
-  // Show small image after 5 seconds
-  useEffect(() => {
-    setTimeout(() => {
+// Show text + image after 5 seconds
+useEffect(() => {
+  const timer = setTimeout(() => {
     setText("I knew you would say yes ❤️");
+    setShowSmallImage(true);
   }, 5000);
-    const timer = setTimeout(() => {
-      setShowSmallImage(true);
-    }, 5000);
 
-    return () => clearTimeout(timer);
-  }, []);
-
-
-  useEffect(() => {
-  setTimeout(() => {
-    setText("I knew you would say yes ❤️");
-  }, 5000);
+  return () => clearTimeout(timer);
 }, []);
 
 
