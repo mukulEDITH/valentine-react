@@ -13,7 +13,6 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
   const [showSmallImage, setShowSmallImage] = useState(false);
-  const [text, setText] = useState("");
 
   const audioRef = useRef(null);
 
