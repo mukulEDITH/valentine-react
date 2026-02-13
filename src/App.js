@@ -36,7 +36,7 @@ useEffect(() => {
 // Show text + image after 5 seconds
 useEffect(() => {
   const timer = setTimeout(() => {
-    setText("I knew you would say yes ❤️");
+
     setShowSmallImage(true);
   }, 5000);
 
