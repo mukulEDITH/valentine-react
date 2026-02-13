@@ -1,16 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
-import rose from "../src/assets/rose.png";
+import rose from "../src/assets/rajat1.png";
 import smallImg from "../src/assets/cute.jpeg"; // or another image
-import song from "../src/assets/Songcut.mp3";
-import harshit from "../src/assets/harshit.png"
+import song from "../src/assets/sona.mp3";
+import harshit from "../src/assets/rajat2.png"
 
 
 
 function App() {
   const [yesSize, setYesSize] = useState(1);
   const [showMessage, setShowMessage] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal,   setShowModal] = useState(false);
   const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
   const [showSmallImage, setShowSmallImage] = useState(false);
 
